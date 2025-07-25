@@ -2,9 +2,11 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Sparkles, RefreshCw } from "lucide-react";
 import { useState } from "react";
+import { generateEcoTip } from "@/services/geminiService";
 
 interface AITipCardProps {
   tip: string;
+  completedHabits?: string[];
   onRefresh?: () => void;
 }
 
@@ -16,20 +18,23 @@ const sampleTips = [
   "Bring reusable bags on your next shopping trip - many stores offer discounts for eco-friendly shoppers!",
 ];
 
-export const AITipCard = ({ tip: initialTip, onRefresh }: AITipCardProps) => {
+export const AITipCard = ({ tip: initialTip, completedHabits = [], onRefresh }: AITipCardProps) => {
   const [tip, setTip] = useState(initialTip);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
-  const handleRefresh = () => {
+  const handleRefresh = async () => {
     setIsRefreshing(true);
     
-    // Simulate AI tip generation
-    setTimeout(() => {
-      const randomTip = sampleTips[Math.floor(Math.random() * sampleTips.length)];
-      setTip(randomTip);
-      setIsRefreshing(false);
+    try {
+      const newTip = await generateEcoTip(completedHabits);
+      setTip(newTip);
       onRefresh?.();
-    }, 1000);
+    } catch (error) {
+      console.error('Failed to generate tip:', error);
+      // Keep current tip on error
+    } finally {
+      setIsRefreshing(false);
+    }
   };
 
   return (

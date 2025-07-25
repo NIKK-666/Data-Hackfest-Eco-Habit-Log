@@ -169,6 +169,9 @@ const Dashboard = () => {
           <div className="space-y-6">
             <AITipCard
               tip="Great job on recycling! Try composting organic waste this week to reduce landfill impact by up to 30%."
+              completedHabits={Array.from(completedHabits).map(id => 
+                dailyHabits.find(h => h.id === id)?.title || id
+              )}
             />
             
             <div className="bg-card rounded-lg p-6 shadow-card">
