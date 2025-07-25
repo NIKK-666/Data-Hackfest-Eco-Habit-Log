@@ -49,3 +49,52 @@ Generate one unique tip now:`;
     return fallbackTips[Math.floor(Math.random() * fallbackTips.length)];
   }
 };
+
+export const chatWithEcoAssistant = async (message: string, chatHistory: Array<{role: 'user' | 'assistant', content: string}> = []): Promise<string> => {
+  try {
+    const systemPrompt = `You are EcoBot, a friendly and knowledgeable AI assistant focused on environmental sustainability and eco-friendly living. 
+
+Your personality:
+- Enthusiastic about environmental protection
+- Practical and solution-oriented
+- Encouraging and positive
+- Educational but not preachy
+
+Guidelines:
+- Keep responses under 150 words
+- Provide actionable, practical advice
+- Use a friendly, conversational tone
+- Include specific examples when helpful
+- Focus on sustainability, green living, climate action, and environmental topics
+- If asked about non-environmental topics, gently redirect to eco-friendly aspects
+
+Current context: You're helping users track their daily eco habits and live more sustainably.`;
+
+    // Convert chat history to Gemini format
+    const conversationHistory = chatHistory.map(msg => ({
+      role: msg.role === 'assistant' ? 'model' : 'user',
+      parts: [{ text: msg.content }]
+    }));
+
+    // Add system context and current message
+    const prompt = `${systemPrompt}\n\nUser message: ${message}`;
+    
+    const result = await model.generateContent({
+      contents: [
+        ...conversationHistory,
+        {
+          role: 'user',
+          parts: [{ text: prompt }]
+        }
+      ]
+    });
+    
+    const response = await result.response;
+    const text = response.text();
+    
+    return text.trim();
+  } catch (error) {
+    console.error('Error in chat conversation:', error);
+    return "Sorry, I'm having trouble connecting right now. Try asking me about eco-friendly tips, sustainable living, or environmental topics!";
+  }
+};
