@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useAuth0 } from '@auth0/auth0-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HabitCard } from "@/components/HabitCard";
 import { StatsCard } from "@/components/StatsCard";
 import { AITipCard } from "@/components/AITipCard";
 import { EcoChatBot } from "@/components/EcoChatBot";
-import { Leaf, Trophy, Zap, Target, MessageCircle } from "lucide-react";
+import { Leaf, Trophy, Zap, Target, MessageCircle, LogOut } from "lucide-react";
 
 interface Habit {
   id: string;
@@ -61,6 +63,31 @@ const dailyHabits: Habit[] = [
 ];
 
 const Dashboard = () => {
+  const { logout, isAuthenticated, isLoading, user } = useAuth0();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 dark:from-emerald-950 dark:to-green-950 flex items-center justify-center">
+        <div className="text-center">
+          <Leaf className="h-8 w-8 animate-spin text-emerald-600 mx-auto mb-4" />
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 dark:from-emerald-950 dark:to-green-950 flex items-center justify-center">
+        <Card className="w-96">
+          <CardHeader className="text-center">
+            <CardTitle>Access Denied</CardTitle>
+            <CardDescription>Please log in to access your dashboard</CardDescription>
+          </CardHeader>
+        </Card>
+      </div>
+    );
+  }
   const [completedHabits, setCompletedHabits] = useState<Set<string>>(new Set());
   const [streak, setStreak] = useState(7);
 
