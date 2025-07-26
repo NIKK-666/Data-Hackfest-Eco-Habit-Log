@@ -1,141 +1,73 @@
+# Welcome to your Lovable project
 
+## Project info
 
----
+**URL**: https://lovable.dev/projects/ebc386d6-fe5a-4d57-af6a-34f54e7349da
 
-```
-# 🌱 EcoLog – Eco Habit Tracker (Hackfest Submission)
+## How can I edit this code?
 
-EcoLog is a lightweight, AI-powered web app that encourages users to live a more sustainable life by tracking small eco-friendly habits. It rewards actions with points and provides personalized green living tips using **Google Gemini AI**.
+There are several ways of editing your application.
 
-🚀 Built during **AI Hackfest 2025**  
-🔓 No login required — privacy-first and easy to use.
+**Use Lovable**
 
----
+Simply visit the [Lovable Project](https://lovable.dev/projects/ebc386d6-fe5a-4d57-af6a-34f54e7349da) and start prompting.
 
-## 📽️ Demo Video
+Changes made via Lovable will be committed automatically to this repo.
 
-▶️ [Watch on Vimeo](https://vimeo.com/1104751202)  
-Or view below:
+**Use your preferred IDE**
 
-<div align="center">
-  <iframe src="https://player.vimeo.com/video/1104751202" width="100%" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-</div>
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
----
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-## 📸 Preview
+Follow these steps:
 
-![EcoLog Screenshot](./preview.png) <!-- Optional: Replace or remove -->
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
----
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-## 🎯 Features
+# Step 3: Install the necessary dependencies.
+npm i
 
-- ✅ Track daily eco-friendly habits
-- ➕ Add custom habits (e.g., "Turned off AC", "Used public transport")
-- 💯 Points system (10 points per habit)
-- 🔁 Streak tracking
-- 🤖 AI suggestions via Gemini API (`gemini-pro`)
-- 📊 Dashboard for recent logs
-- ⚡ Fully responsive Tailwind UI
-
----
-
-## 🧱 Tech Stack
-
-| Layer        | Tech                              |
-|--------------|-----------------------------------|
-| Frontend     | React + Tailwind CSS              |
-| Backend      | Node.js + Express.js              |
-| AI API       | Google Gemini (API key based)     |
-| Database     | MongoDB Atlas (Mongoose ORM)      |
-| Hosting      | Vercel (frontend), Render (backend) |
-
----
-
-## 📂 Project Structure
-
-```
-
-Data-Hackfest-Eco-Habit-Log/
-├── client/         # React Frontend (Habits + Dashboard)
-├── server/         # Express Backend (MongoDB + Gemini API)
-├── .env.example    # Sample environment config
-├── README.md
-
-````
-
----
-
-## ⚙️ Environment Setup
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/NIKK-666/Data-Hackfest-Eco-Habit-Log.git
-cd Data-Hackfest-Eco-Habit-Log
-````
-
-### 2. Setup environment files
-
-Create `.env` file in `server/` and add:
-
-```env
-MONGODB_URI=mongodb+srv://your-user:your-password@cluster.mongodb.net/dbname
-GEMINI_API_KEY=AIzaSy...
-```
-
-### 3. Install dependencies
-
-```bash
-# Backend
-cd server
-npm install
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-
-# Frontend (in another terminal)
-cd ../client
-npm install
-npm start
 ```
 
----
+**Edit a file directly in GitHub**
 
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
+**Use GitHub Codespaces**
 
----
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## 📹 Demo Script
+## What technologies are used for this project?
 
-> “Hi, I’m Nikhil, and this is **EcoLog** — a simple tool to build sustainable habits.
-> Just check the green actions you did today, and EcoLog will give you points and an AI tip using Google Gemini.
-> No login, no complexity — just eco-action made easy and personal.”
+This project is built with:
 
----
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-## 🤝 Contributions
+## How can I deploy this project?
 
-Pull requests are welcome. Feel free to fork and add:
+Simply open [Lovable](https://lovable.dev/projects/ebc386d6-fe5a-4d57-af6a-34f54e7349da) and click on Share -> Publish.
 
-* 📈 Weekly stats (Chart.js)
-* 📱 Mobile PWA support
-* 🧠 Habit recommendation engine
+## Can I connect a custom domain to my Lovable project?
 
----
+Yes, you can!
 
-## 📄 License
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-MIT License © 2025 [Nikhil Barman](https://github.com/NIKK-666)
-
----
-
-## 🙌 Acknowledgements
-
-* [Google Gemini API](https://ai.google.dev/)
-* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-* [Tailwind CSS](https://tailwindcss.com/)
-* [Hackfest AI](https://mlh.io/)
-
----
-
-```
-
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
