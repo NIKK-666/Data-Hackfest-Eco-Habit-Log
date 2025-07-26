@@ -100,11 +100,7 @@ npm start
 
 ---
 
-## 🌍 Hosting & Deployment
 
-* Frontend hosted on **Vercel**
-* Backend (API + Gemini + MongoDB) deployed on **Render**
-* CORS and API routes are pre-configured for smooth deployment
 
 ---
 
