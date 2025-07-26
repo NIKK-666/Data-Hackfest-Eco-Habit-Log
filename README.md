@@ -80,8 +80,8 @@ cd Data-Hackfest-Eco-Habit-Log
 Create `.env` file in `server/` and add:
 
 ```env
-MONGODB_URI=
-GEMINI_API_KEY=.
+MONGODB_URI=mongodb+srv://your-user:your-password@cluster.mongodb.net/dbname
+GEMINI_API_KEY=AIzaSy...
 ```
 
 ### 3. Install dependencies
