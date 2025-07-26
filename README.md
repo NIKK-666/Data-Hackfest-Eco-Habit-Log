@@ -1,8 +1,8 @@
-Here's your updated `README.md` with the **Vimeo demo video** embedded:
+
 
 ---
 
-```markdown
+```
 # 🌱 EcoLog – Eco Habit Tracker (Hackfest Submission)
 
 EcoLog is a lightweight, AI-powered web app that encourages users to live a more sustainable life by tracking small eco-friendly habits. It rewards actions with points and provides personalized green living tips using **Google Gemini AI**.
