@@ -1,13 +1,9 @@
 import { useState } from "react";
-import { useAuth0 } from '@auth0/auth0-react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HabitCard } from "@/components/HabitCard";
 import { StatsCard } from "@/components/StatsCard";
 import { AITipCard } from "@/components/AITipCard";
-import { EcoChatBot } from "@/components/EcoChatBot";
-import { Leaf, Trophy, Zap, Target, MessageCircle, LogOut } from "lucide-react";
+import { Leaf, Trophy, Zap, Target } from "lucide-react";
 
 interface Habit {
   id: string;
@@ -63,31 +59,6 @@ const dailyHabits: Habit[] = [
 ];
 
 const Dashboard = () => {
-  const { logout, isAuthenticated, isLoading, user } = useAuth0();
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 dark:from-emerald-950 dark:to-green-950 flex items-center justify-center">
-        <div className="text-center">
-          <Leaf className="h-8 w-8 animate-spin text-emerald-600 mx-auto mb-4" />
-          <p className="text-muted-foreground">Loading...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-100 dark:from-emerald-950 dark:to-green-950 flex items-center justify-center">
-        <Card className="w-96">
-          <CardHeader className="text-center">
-            <CardTitle>Access Denied</CardTitle>
-            <CardDescription>Please log in to access your dashboard</CardDescription>
-          </CardHeader>
-        </Card>
-      </div>
-    );
-  }
   const [completedHabits, setCompletedHabits] = useState<Set<string>>(new Set());
   const [streak, setStreak] = useState(7);
 
@@ -194,54 +165,32 @@ const Dashboard = () => {
             )}
           </div>
 
-          {/* AI Assistant */}
+          {/* AI Tips & Weekly Overview */}
           <div className="space-y-6">
-            <Tabs defaultValue="tips" className="w-full">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="tips" className="flex items-center space-x-2">
-                  <Zap className="w-4 h-4" />
-                  <span>AI Tips</span>
-                </TabsTrigger>
-                <TabsTrigger value="chat" className="flex items-center space-x-2">
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Chat</span>
-                </TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="tips" className="space-y-6 mt-6">
-                <AITipCard
-                  tip="Great job on recycling! Try composting organic waste this week to reduce landfill impact by up to 30%."
-                  completedHabits={Array.from(completedHabits).map(id => 
-                    dailyHabits.find(h => h.id === id)?.title || id
-                  )}
-                />
-                
-                <div className="bg-card rounded-lg p-6 shadow-card">
-                  <h3 className="text-lg font-semibold mb-4 flex items-center space-x-2">
-                    <Zap className="w-5 h-5" />
-                    <span>Quick Actions</span>
-                  </h3>
-                  <div className="space-y-3">
-                    <Button variant="outline" className="w-full justify-start">
-                      📊 View Weekly Report
-                    </Button>
-                    <Button variant="outline" className="w-full justify-start">
-                      🎯 Set Custom Goals
-                    </Button>
-                    <Button variant="outline" className="w-full justify-start">
-                      🌱 Find New Habits
-                    </Button>
-                    <Button variant="outline" className="w-full justify-start">
-                      🤝 Share Progress
-                    </Button>
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="chat" className="mt-6">
-                <EcoChatBot />
-              </TabsContent>
-            </Tabs>
+            <AITipCard
+              tip="Great job on recycling! Try composting organic waste this week to reduce landfill impact by up to 30%."
+            />
+            
+            <div className="bg-card rounded-lg p-6 shadow-card">
+              <h3 className="text-lg font-semibold mb-4 flex items-center space-x-2">
+                <Zap className="w-5 h-5" />
+                <span>Quick Actions</span>
+              </h3>
+              <div className="space-y-3">
+                <Button variant="outline" className="w-full justify-start">
+                  📊 View Weekly Report
+                </Button>
+                <Button variant="outline" className="w-full justify-start">
+                  🎯 Set Custom Goals
+                </Button>
+                <Button variant="outline" className="w-full justify-start">
+                  🌱 Find New Habits
+                </Button>
+                <Button variant="outline" className="w-full justify-start">
+                  🤝 Share Progress
+                </Button>
+              </div>
+            </div>
 
             <div className="bg-card rounded-lg p-6 shadow-card">
               <h3 className="text-lg font-semibold mb-4">This Week's Impact</h3>
