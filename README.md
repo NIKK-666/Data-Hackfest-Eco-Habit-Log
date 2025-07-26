@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/ebc386d6-fe5a-4d57-af6a-34f54e7349da
+**URL**: https://preview--eco-habit-ai.lovable.app/
 
 ## How can I edit this code?
 
