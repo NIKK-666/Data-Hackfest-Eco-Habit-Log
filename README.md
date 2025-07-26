@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
 
-## Project info
 
-**URL**: https://preview--eco-habit-ai.lovable.app/
+---
 
-## How can I edit this code?
+# 🌱 EcoLog – Daily Habit Tracker for a Greener Life
 
-There are several ways of editing your application.
+EcoLog is a simple and effective web app that helps users track their daily eco-friendly habits and visualize their impact over time. Built for the **Data Hackfest**, this project promotes sustainability through mindful daily actions.
+Url=https://preview--eco-habit-ai.lovable.app/
+## 🌍 Features
 
-**Use Lovable**
+* ✅ Add & update eco-friendly habits (e.g., recycled, used public transport)
+* 📈 Track your habit history with date and time
+* 🔍 View and filter logs easily
+* 🎯 Built using Node.js, Express, MongoDB, and EJS
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ebc386d6-fe5a-4d57-af6a-34f54e7349da) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+* **Frontend**: HTML, CSS, EJS
+* **Backend**: Node.js, Express.js
+* **Database**: MongoDB (Mongoose)
+* **Hosting**: Can be deployed on **Render**, **Vercel**, or **Netlify**
 
-**Use your preferred IDE**
+## 📽️ Demo
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🎥 [Watch Demo Video](https://vimeo.com/1104751202)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Getting Started
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* Node.js v16+
+* MongoDB (local or cloud)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+git clone https://github.com/NIKK-666/Data-Hackfest-Eco-Habit-Log.git
+cd Data-Hackfest-Eco-Habit-Log
+npm install
 ```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
 
-**Use GitHub Codespaces**
+## 🧠 Idea Behind the Project
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+By building this tracker, we aim to:
 
-## What technologies are used for this project?
+* Encourage individuals to form sustainable habits
+* Provide a simple log to reflect on eco-conscious activities
+* Raise awareness through a tech-powered initiative
 
-This project is built with:
+## 📌 To-Do / Enhancements
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+* [ ] User authentication
+* [ ] Analytics dashboard
+* [ ] Gamification with streaks & badges
+* [ ] API integration for eco tips
 
-## How can I deploy this project?
+## 👨‍💻 Author
 
-Simply open [Lovable](https://lovable.dev/projects/ebc386d6-fe5a-4d57-af6a-34f54e7349da) and click on Share -> Publish.
+* Nikhil Barman – [@NIKK-666](https://github.com/NIKK-666)
 
-## Can I connect a custom domain to my Lovable project?
+## 📜 License
 
-Yes, you can!
+MIT License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Would you like me to automatically add this to the GitHub repo as a pull request or give it as a `.md` file to upload?
